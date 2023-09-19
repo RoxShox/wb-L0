@@ -1326,7 +1326,7 @@ input::-webkit-inner-spin-button {
         font-size: 20px;
         margin: 0 0 13.5px;
     }
-    .cart__item-info-titlem, .absent__item-content-title{
+    .cart__item-info-title, .absent__item-content-title{
         font-size: 14px;
         -webkit-line-clamp: 2;
         display: -webkit-box;
