@@ -118,7 +118,7 @@ function deleteProduct(e) {
 	if (cardID) {
 		cartArr.items = cartArr.items.filter((product) => product.id != cardID)
 
-		canselProductProduct(cardID)
+		canselProduct(cardID)
 		updateCartLabels()
 		updateTotalPrice()
 	} else {
@@ -174,15 +174,11 @@ function handlerCount(e, btnDirection) {
 	const id = e.target.closest(".cart__item").dataset.id
 	const input = e.target.closest(".cart__item").querySelector(".counter__value")
 	const maxValue = cartArr.items.find((item) => item.id == id)?.stock
-	const maxValueLength = parseInt(input.getAttribute("maxlength"))
+	// const maxValueLength = parseInt(input.getAttribute("maxlength"))
 	const currentValue = +input.value
 
 	let newValue = btnDirection ? currentValue + 1 : currentValue - 1
-	if (
-		newValue >= 1 &&
-		newValue.toString().length <= maxValueLength &&
-		newValue <= maxValue
-	) {
+	if (newValue >= 1 && newValue <= maxValue) {
 		input.value = newValue
 		changeCardCount(id, newValue)
 	}

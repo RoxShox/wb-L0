@@ -190,7 +190,6 @@ const formValidate = () => {
 
 	//   слушатели
 	for (let elem of form.elements) {
-		console.log(elem)
 		elem.addEventListener("blur", () => {
 			validate(elem)
 		})
